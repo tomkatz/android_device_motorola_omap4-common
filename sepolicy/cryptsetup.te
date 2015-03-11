@@ -1,0 +1,7 @@
+#type devicemapper_file, file_type;
+#allow init devicemapper_file:dir create_dir_perms;
+#allow init devicemapper_file:file create_file_perms;
+#allow init devicemapper_file:blk_file { create };
+allow init device:blk_file { create setattr unlink };
+
+

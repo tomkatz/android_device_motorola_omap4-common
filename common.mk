@@ -200,6 +200,24 @@ PRODUCT_COPY_FILES += \
     $(COMMON_FOLDER)/prebuilt/bin/bbx:/root/sbin/bbx \
     $(COMMON_FOLDER)/prebuilt/bin/fixboot.sh:/root/sbin/fixboot.sh
 
+# cryptsetup and friends. binaries as a stopgap measure until we build cryptsetup from source.
+PRODUCT_COPY_FILES += \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/cryptsetup:/root/sbin/local/cryptsetup/cryptsetup \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/ld-2.5.so:/root/sbin/local/cryptsetup/ld-2.5.so \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/ld-linux.so.3:/root/sbin/local/cryptsetup/ld-linux.so.3 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libcrypto_openssl.so:/root/sbin/local/cryptsetup/libcrypto_openssl.so \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libcrypto.so.0.9.8:/root/sbin/local/cryptsetup/libcrypto.so.0.9.8 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libcryptsetup.so.0:/root/sbin/local/cryptsetup/libcryptsetup.so.0 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libcryptsetup.so.0.0.0:/root/sbin/local/cryptsetup/libcryptsetup.so.0.0.0 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libc.so.6:/root/sbin/local/cryptsetup/libc.so.6 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libdevmapper.so.1.02:/root/sbin/local/cryptsetup/libdevmapper.so.1.02 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libdl.so.2:/root/sbin/local/cryptsetup/libdl.so.2 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libgcc_s.so.1:/root/sbin/local/cryptsetup/libgcc_s.so.1 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libpopt.so.0:/root/sbin/local/cryptsetup/libpopt.so.0 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libpopt.so.0.0.0:/root/sbin/local/cryptsetup/libpopt.so.0.0.0 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libuuid.so.1:/root/sbin/local/cryptsetup/libuuid.so.1 \
+    $(COMMON_FOLDER)/prebuilt/usr/local/cryptsetup/libz.so.1:/root/sbin/local/cryptsetup/libz.so.1
+
 # sw vsync setting
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.hwc.sw_vsync=1

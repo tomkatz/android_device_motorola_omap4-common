@@ -184,6 +184,7 @@ BOARD_SEPOLICY_UNION += \
     akmd8975.te \
     battd.te \
     bluetooth.te \
+    cryptsetup.te \
     debuggered.te \
     drmserver.te \
     file_contexts \
