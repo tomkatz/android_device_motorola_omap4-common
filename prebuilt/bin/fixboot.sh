@@ -47,7 +47,7 @@ else
 		/sbin/bbx losetup /dev/block/loop-"$part"-enc /ss/safestrap/"$SLOT_LOC"/"$part".img.enc
 	done
 	
-	for I in 0; do # Try exactly 1 time. Add more words in order to increase the number of tries.
+	while true; do
 		read passphrase </dev/console
 		for part in system userdata cache; do
 			echo "$passphrase" | LD_LIBRARY_PATH="$CRYPTSETUPDIR" "$CRYPTSETUPDIR"/ld-linux.so.3 "$CRYPTSETUPDIR"/cryptsetup luksOpen /dev/block/loop-"$part"-enc "$part"
@@ -56,6 +56,9 @@ else
 			fi
 		done
 		if test -e /dev/mapper/system; then
+			break
+		fi
+		if "$passphrase" = "${passphrase%%aaaa}" # Try exactly 1 time. Excep if the user's input is terminated with "aaaa", then retry.
 			break
 		fi
 	done
